@@ -1,0 +1,95 @@
+/* elements*/
+input {
+	margin: 15px 15px 0px 15px;
+	font-size: 18pt;
+	border: none;
+	border-bottom: 2px solid black;
+}
+
+label {
+	font-size: 14pt;
+}
+
+select {
+	width: 230px;
+	font-size: 14pt;
+	border: none;
+	border-bottom: 2px solid black;
+}
+/* id */
+#body {
+	
+}
+
+#templateForm {
+	text-align: center;
+	margin: auto;
+	margin-top: 25px;
+	width: 600px;
+	height: 400px;
+	background-color: white;
+	border: 1px solid #BFBFBF;
+	border-radius: 5px;
+	box-shadow: 0px 0px 15px #aaaaaa;
+}
+
+#SignIn {
+	
+}
+
+#SignUp {
+	
+}
+
+#btn-group {
+	
+}
+
+#SignInBtn {
+	border-right: 3px solid black;
+	border-radius: 10px 0px 0px 10px;
+}
+
+#SignUpBtn {
+	border-left: 3px solid black;
+	border-radius: 0px 10px 10px 0px;
+}
+
+#SignInBtn, #SignUpBtn {
+	margin: 15px 0px;
+	font-size: 24pt;
+	background-color: #aaaaaa;
+	color: #eeeeee;
+	box-shadow: 0px 0px 15px #aaaaaa;
+}
+
+#SignInBtn:hover, #SignUpBtn:hover {
+	color: yellow;
+	font-size: 26pt;
+}
+
+#SignInBtn:active, #SignUpBtn:active {
+	color: lightgreen;
+}
+
+#submit {
+	font-size: 18pt;
+	background-color: white;
+	color: #888888;
+	border-radius: 5px;
+	box-shadow: 0px 0px 15px #aaaaaa;
+}
+
+#submit:hover {
+	font-size: 20pt;
+	color: black;
+}
+
+/* class */
+.radioBtn {
+	box-shadow: 0px 0px 15px #aaaaaa;
+}
+
+.error {
+	color: red;
+}
