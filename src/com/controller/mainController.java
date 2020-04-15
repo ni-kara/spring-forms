@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.entity.User;
-import com.service.ICountries;
+import com.service.IUserService;
 
 @Controller
 @RequestMapping("/")
 public class mainController {
 
 	@Autowired
-	private ICountries countries;
+	private IUserService userService;
 
 	// remove white space
 	@InitBinder
@@ -35,7 +35,7 @@ public class mainController {
 	@RequestMapping("/showSignUpPage")
 	public String showRegisterPage(Model theModel) {
 		theModel.addAttribute("user", new User());
-		theModel.addAttribute("countries", countries.getCountries());
+		theModel.addAttribute("countries", userService.getCountries());
 
 		return "SignUpPage";
 	}
@@ -43,8 +43,6 @@ public class mainController {
 	@RequestMapping("/showSignInPage")
 	public String showLoginPage(Model theModel) {
 		theModel.addAttribute("user", new User());
-		theModel.addAttribute("countries", countries.getCountries());
-
 		return "SignInPage";
 	}
 
@@ -56,11 +54,13 @@ public class mainController {
 		if (theBindingResult.hasErrors()) 
 		{
 			theModel.addAttribute("user", theUser);
-			theModel.addAttribute("countries", countries.getCountries());
+			theModel.addAttribute("countries", userService.getCountries());
 			
 			return "SignUpPage";
 		} 
-		else
+		else {
+			userService.saveUser(theUser);
 			return "SuccessPage";
+		}
 	}
 }

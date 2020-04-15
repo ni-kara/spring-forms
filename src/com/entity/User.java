@@ -1,40 +1,53 @@
 package com.entity;
 
-/*
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Table;*/
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+@Entity
+@Table(name = "users")
 public class User {
 
+	@Column(name = "firstName")
 	@NotNull(message = "is required")
 	@Size(min = 3, max = 25, message = "the length char of must between 3 to 25")
 	@Pattern(regexp = "([a-zA-Z][a-zA-Z0-9]*$)", message = "Non valid")
 	private String firstName;
 
+
+	@Column(name = "lastName")
 	@NotNull(message = "is required")
 	@Size(min = 3, max = 25, message = "the length char of must between 3 to 25")
 	@Pattern(regexp = "([a-zA-Z][a-zA-Z0-9]*$)", message = "Non valid")
 	private String lastName;
 
+	@Column(name = "email", unique = true)
 	@NotNull(message = "is required")
 	@Pattern(regexp = "^[a-zA-Z][a-zA-Z0-9.]*@[a-z]*\\.[a-z]+", message = "Non valid")
 	private String email;
 
+	@Id
+	@Column(name = "username")
 	@NotNull(message = "is required")
 	@Size(min = 3, max = 25, message = "the length char of must between 3 to 25")
 	@Pattern(regexp = "([a-zA-Z][a-zA-Z0-9.-]*$)", message = "Non valid")
 	private String username;
 
+	@Column(name ="password")
 	@NotNull(message = "is required")
 	@Size(min = 3, max = 25, message = "the length char of must between 3 to 25")
 	private String password;
 
+	@Column(name = "country")
 	@NotNull(message = "is required")
 	private String country;
 
+	@Column(name = "role")
 	@NotNull(message = "is required")
 	private String role;
 
