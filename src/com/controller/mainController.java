@@ -47,15 +47,15 @@ public class mainController {
 	}
 
 	@PostMapping("/saveUser")
-	public String saveUser(@Valid @ModelAttribute("user") User theUser, BindingResult theBindingResult,	Model theModel) {
+	public String saveUser(@Valid @ModelAttribute("user") User theUser, BindingResult theBindingResult,
+			Model theModel) {
 
 		System.out.println(theUser);
-		
-		if (theBindingResult.hasErrors()) 
-		{
+
+		if (theBindingResult.hasErrors()) {
 			theModel.addAttribute("user", theUser);
 			theModel.addAttribute("countries", userService.getCountries());
-			
+
 			return "SignUpPage";
 		} 
 		else {

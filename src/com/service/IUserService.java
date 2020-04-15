@@ -9,5 +9,7 @@ public interface IUserService {
 	public void saveUser(User theUser);
 	
 	public List<String> getCountries();
-
+	
+	public String encryptionPassword(String password);
+	
 }

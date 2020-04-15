@@ -19,7 +19,6 @@ public class User {
 	@Pattern(regexp = "([a-zA-Z][a-zA-Z0-9]*$)", message = "Non valid")
 	private String firstName;
 
-
 	@Column(name = "lastName")
 	@NotNull(message = "is required")
 	@Size(min = 3, max = 25, message = "the length char of must between 3 to 25")
@@ -38,9 +37,9 @@ public class User {
 	@Pattern(regexp = "([a-zA-Z][a-zA-Z0-9.-]*$)", message = "Non valid")
 	private String username;
 
-	@Column(name ="password")
+	@Column(name = "password")
 	@NotNull(message = "is required")
-	@Size(min = 3, max = 25, message = "the length char of must between 3 to 25")
+	@Size(min = 3, max = 68, message = "the length char of must between 3 to 68")
 	private String password;
 
 	@Column(name = "country")
